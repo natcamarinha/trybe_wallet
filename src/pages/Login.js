@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Input from '../components/Input';
+import { loginSuccess } from '../actions';
 
 class Login extends React.Component {
   constructor(props) {
@@ -41,9 +43,8 @@ class Login extends React.Component {
   }
 
   handleClick() {
-    const { history, login } = this.props;
     const { email } = this.state;
-
+    const { history, login } = this.props;
     login(email);
     history.push('/carteira');
   }
@@ -53,27 +54,28 @@ class Login extends React.Component {
 
     return (
       <div>
+        <h2>Login</h2>
         <Input
           type="email"
           name="email"
           label="Email: "
           placeholder="email@exemplo.com"
+          testId="email-input"
           value={ email }
           onChange={ this.handleEmail }
-          data-testid="email-input"
         />
         <Input
           type="password"
           name="password"
           label="Senha: "
           placeholder="senha"
+          testId="password-input"
           value={ password }
           onChange={ this.handlePassword }
-          data-testid="password-input"
         />
         <button
           type="button"
-          onClicke={ this.handleClick }
+          onClick={ this.handleClick }
           disabled={ !validEmail || !validPassword }
         >
           Entrar
@@ -83,6 +85,10 @@ class Login extends React.Component {
   }
 }
 
+const mapDispatchToProps = (dispatch) => ({
+  login: (payload) => dispatch(loginSuccess(payload)),
+});
+
 Login.propTypes = {
   login: PropTypes.func.isRequired,
   history: PropTypes.shape({
@@ -90,4 +96,4 @@ Login.propTypes = {
   }).isRequired,
 };
 
-export default Login;
+export default connect(null, mapDispatchToProps)(Login);
