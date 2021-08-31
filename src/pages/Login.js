@@ -21,7 +21,7 @@ class Login extends React.Component {
   }
 
   handleEmail({ target }) {
-    const emailValidation = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailValidation = /^[^\s@]+@[^\s@]+\.[^\s@]+$/g;
     const validEmail = emailValidation.test(target.value);
 
     // email regex: https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
@@ -45,6 +45,7 @@ class Login extends React.Component {
   handleClick() {
     const { email } = this.state;
     const { history, login } = this.props;
+
     login(email);
     history.push('/carteira');
   }
@@ -64,6 +65,7 @@ class Login extends React.Component {
           value={ email }
           onChange={ this.handleEmail }
         />
+
         <Input
           type="password"
           name="password"
@@ -73,6 +75,7 @@ class Login extends React.Component {
           value={ password }
           onChange={ this.handlePassword }
         />
+
         <button
           type="button"
           onClick={ this.handleClick }
