@@ -59,6 +59,7 @@ class Login extends React.Component {
         <Input
           type="email"
           name="email"
+          id="email"
           label="Email: "
           placeholder="email@exemplo.com"
           testId="email-input"
@@ -69,6 +70,7 @@ class Login extends React.Component {
         <Input
           type="password"
           name="password"
+          id="name"
           label="Senha: "
           placeholder="senha"
           testId="password-input"
