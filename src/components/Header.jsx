@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ExpenseForm from './ExpenseForm';
 import HeaderForm from './HeaderForm';
 
 class Header extends React.Component {
