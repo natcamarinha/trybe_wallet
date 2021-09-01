@@ -29,7 +29,7 @@ class HeaderForm extends React.Component {
         </label>
 
         <label htmlFor="payment">
-          Métodos de pagamento
+          Método de pagamento
           <select id="payment">
             <option>Dinheiro</option>
             <option>Cartão de crédito</option>

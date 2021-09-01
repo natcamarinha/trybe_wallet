@@ -27,9 +27,15 @@ Input.propTypes = {
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
-  testId: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
+  testId: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+};
+
+Input.defaultProps = {
+  testId: '',
+  value: '',
+  onChange: () => {},
 };
 
 export default Input;
