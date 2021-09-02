@@ -1,16 +1,16 @@
-// Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
+import { GET_CURRENCY } from '../actions';
 
-// const INITIAL_STATE = {
-//   chaves do estado inicial da carteira: '',
-// };
+const INITIAL_STATE = {
+  currencies: [],
+};
 
-// function walletReducer(state = INITIAL_STATE, action) {
-//   switch (action.type) {
-//   case 'QUALQUER_COISA':
-//     return state;
-//   default:
-//     return state;
-//   }
-// }
+function wallet(state = INITIAL_STATE, action) {
+  switch (action.type) {
+  case GET_CURRENCY:
+    return { ...state, currencies: action.payload };
+  default:
+    return state;
+  }
+}
 
-// export default walletReducer;
+export default wallet;
