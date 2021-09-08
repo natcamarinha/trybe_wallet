@@ -110,7 +110,7 @@ class HeaderForm extends React.Component {
       </fieldset>
     );
   }
-} 
+}
 
 HeaderForm.propTypes = {
   getCurrencies: PropTypes.func.isRequired,
