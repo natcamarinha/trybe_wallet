@@ -14,6 +14,7 @@ Os objetivos do projeto são:
 
   * Criar actions assíncronas na sua aplicação React que faz uso de Redux.
 
+
 O projeto consiste em desenvolver uma aplicação em React que use Redux como ferramenta de manipulação de estado. 
 
 Essa aplicação é carteira de controle de gastos com conversor de moedas, que ao ser utilizada pelo usuário deverá ser capaz de:
